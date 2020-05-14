@@ -7,6 +7,10 @@ class PizzasController < ApplicationController
 
   def show
     @pizza = Pizza.find_by(id: params[:id])
+    if @pizza.nil?
+      head :not_found
+      return
+    end
   end
 
   def new
@@ -14,7 +18,15 @@ class PizzasController < ApplicationController
   end
 
   def create
+    @pizza = Pizza.new(pizza_params)
 
+    if @pizza.save
+      redirect_to pizza_path(@pizza.id)
+      return
+    else
+      render :new
+      return
+    end
   end
 
   def edit
@@ -27,5 +39,13 @@ class PizzasController < ApplicationController
 
   def destroy
     @pizza = Pizza.find_by(id: params[:id])
+
+  end
+
+
+  private
+
+  def pizza_params
+    return params.require(:pizza).permit(:crust, :name, :sauce, :cheese, :toppings)
   end
 end

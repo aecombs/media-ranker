@@ -1,0 +1,30 @@
+<% if @pizza.errors.any? %>
+  <p><strong>There was an error in saving this pizza: </strong></p>
+  <ul><% @pizza.errors.each do |column, message| %>
+    <li><%= column.capitalize %> <%= message%>.</li>
+  <% end %></ul>
+<% end %>
+
+<%= form_with model: @pizza, class: 'pizza-form' do |f| %>
+  <div>
+    <%= f.label :crust%>
+    <%= f.select :crust, options_for_select(["thin", "thick", "deep-dish"])  %>
+  </div>
+  <div>
+    <%= f.label :name%>
+    <%= f.text_field :name%>
+  </div>
+  <div>
+    <%= f.label :sauce %>
+    <%= f.text_field :sauce %>
+  </div>
+  <div>
+    <%= f.label :cheese %>
+    <%= f.text_field :cheese %>
+  </div>
+  <div>
+    <%= f.label :toppings %>
+    <%= f.text_area :toppings %>
+  </div>
+  <%= f.submit action_name, class: "button" %>
+<% end %>

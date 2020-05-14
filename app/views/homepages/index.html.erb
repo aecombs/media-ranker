@@ -13,7 +13,7 @@
       <%# Change this to reflect top ten stuff%>
       <% Pizza.order("id DESC").where(crust: "thin").each do |p| %>
         <li>
-          <h5><%= p.name %></h5>
+          <h5><%= link_to p.name, pizza_path(p.id) %></h5>
           <p><%= p.votes.length %> votes</p>
         </li>
       <% end %>
@@ -26,7 +26,7 @@
       <ul>
       <% Pizza.order("id DESC").where(crust: "thick").each do |p| %>
         <li>
-          <h5><%= p.name %></h5>
+          <h5><%= link_to p.name, pizza_path(p.id) %></h5>
           <p><%= p.votes.length %> votes</p>
         </li>
       <% end %>
@@ -38,7 +38,7 @@
       <ul>
       <% Pizza.order("id DESC").where(crust: "deep-dish").each do |p| %>
         <li>
-          <h5><%= p.name %></h5>
+          <h5><%= link_to p.name, pizza_path(p.id) %></h5>
           <p><%= p.votes.length %> votes</p>
         </li>
       <% end %>
