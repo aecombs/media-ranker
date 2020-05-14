@@ -16,3 +16,150 @@
 @import "bootstrap";
 
 @import "**/*";
+
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//All Pages
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+body {
+  background-color:rgb(242, 235, 230);
+  background-image: url('mushroom-pizza-in-oven.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: rgb(41, 41, 41);
+  font-family: 'Fira Sans', sans-serif;
+}
+
+header {
+  max-width: 100%;
+  height: 50vh;
+  margin-bottom: 0.5rem;
+  padding: 2rem 1rem 0.5rem 1rem;
+  text-align: center;
+}
+
+div.homepage-title {
+  background-color:rgba(255, 255, 255, 0.75);
+  margin: -1rem 4rem;
+  padding: 1rem;
+  box-shadow: 2px 2px 10px rgb(87, 87, 87);
+  border-radius: 10px;
+}
+
+div.homepage-title p {
+  font-size: 1.5rem;
+}
+
+header a {
+  color: rgb(41, 41, 41);
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.379);
+}
+
+header p {
+  color: rgb(41, 41, 41);
+}
+
+header a:hover {
+  color: rgb(82, 82, 82);
+  text-decoration: none;
+}
+
+nav.homepage-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 5rem;
+}
+
+ul.nav li {
+  padding: 0 1rem;
+}
+
+ul.nav a {
+  text-shadow: none;
+}
+
+button a {
+  color:white;
+}
+
+button.homepage-nav-button {
+  color: white;
+  background-color: rgb(213, 135, 0);
+  text-shadow: none;
+  border: 0 white solid;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+button a:hover {
+  color: white;
+}
+
+button.homepage-nav-button:hover {
+  background-color: rgb(233, 149, 2);
+  // box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.495);
+}
+
+footer {
+  text-align: center;
+  font-size: small;
+  color: rgb(182, 182, 152);
+  }
+
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//Homepages#index
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+section.top-pizzas {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+li {
+  list-style-type: none;
+}
+
+div.homepage-index {
+  margin: 1vw;
+}
+
+section.spotlight {
+  text-align: center;
+  background-color:rgba(255, 255, 255, 0.85);
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.303);
+  box-shadow: 2px 2px 10px rgb(87, 87, 87);
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 2rem 15rem;
+}
+
+article.top-crusts {
+  background-color:rgba(255, 255, 255, 0.85);
+  box-shadow: 2px 2px 10px rgb(87, 87, 87);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-right: 1rem;
+}
+article.top-crusts h4 {
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.303);
+}
+
+article.top-crusts a {
+  color: rgb(41, 41, 41);
+}
+
+article.top-crusts a:hover {
+  color: rgb(82, 82, 82);
+  text-decoration: none;
+}
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

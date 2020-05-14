@@ -7,9 +7,32 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <div class="homepage-title">
+        <h1><%= link_to "Pizza Ranker", root_path %></h1>
+        <p><strong>Now <em>you</em> can decide whether pineapple belongs on pizza!</strong></p>
+
+        <nav class="homepage-nav">
+          <ul class="nav homepage-site-nav">
+            <li><%= link_to "View Top Pizzas", root_path %></li>
+            <li><%= link_to "View All Pizzas", pizzas_path %></li>
+            <li><%= link_to "Design a New Pizza", new_pizza_path %></li>
+            <li><%= link_to "View All Users", users_path %></li>
+          </ul>
+          <ul class="nav homepage-user-nav">
+            <li><button class="homepage-nav-button"><%= link_to "Logged In As #{"TODO"}", users_path %></button></li>
+            <li><button class="homepage-nav-button"><%= link_to "Log Out", users_path %></button></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <%= yield %>
+    </main>
+    <footer>© 2020 Alicia Elizabeth Combs</footer>
   </body>
 </html>

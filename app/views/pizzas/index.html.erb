@@ -1,0 +1,17 @@
+<div class="pizza-index">
+  <h3>List of Pizzas</h3>
+  <section class="thin-crust-table">
+    <h5>Thin Crust</h5>
+    <%= render partial: "table", locals: { pizzas: @thin_crust }%>
+  </section>
+  <hr>
+  <section class="thick-crust-table">
+    <h5>Thick Crust</h5>
+    <%= render partial: "table", locals: { pizzas: @thick_crust }%>
+  </section>
+  <hr>
+  <section class="deep-dish-table">
+    <h5>Deep Dish</h5>
+    <%= render partial: "table", locals: { pizzas: @deep_dish }%>
+  </section>
+</div>

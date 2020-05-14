@@ -1,0 +1,26 @@
+
+<% if pizzas.length > 0 %>
+  <table class="table">
+    <tr>
+      <th>Votes</th>
+      <th>Name</th>
+      <th>Sauce</th>
+      <th>Cheese</th>
+      <th>Toppings</th>
+      <th>Upvote</th>
+    </tr>
+    <% pizzas.each do |pizza| %>
+      <tr>
+        <td><%= pizza.votes.length %></td>
+        <td><%= link_to pizza.name, pizza_path(pizza.id) %></td>
+        <td><%= pizza.sauce %></td>
+        <td><%= pizza.cheese %></td>
+        <td><%= pizza.toppings %></td>
+        <td>Vote!<%=  %></td>
+      </tr>
+    <% end %>
+  </table>
+<% else %>
+  <p>There are no pizzas on record for this type of crust.</p>
+  <p><%= link_to "Why don't you add one?", new_pizza_path %></p>
+<% end %>

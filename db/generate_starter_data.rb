@@ -1,5 +1,4 @@
 require "faker"
-require "date"
 require "csv"
 
 # we already provide a filled out works_seeds.csv file, but feel free to
@@ -10,9 +9,9 @@ require "csv"
 # $ rails db:reset
 # doesn't currently check for if titles are unique against each other
 
-CSV.open("db/pizza_seeds.csv", "w", :write_headers => true,
+CSV.open("db/pizza-seeds.csv", "w", :write_headers => true,
                                     :headers => ["crust", "name", "sauce", "cheese", "toppings"]) do |csv|
-  28.times do
+  25.times do
     crust = %w(thin thick deep-dish).sample
     name = Faker::Food.dish
     sauce = %w(Red White Korean-BBQ Pesto Tikka-Masala).sample
