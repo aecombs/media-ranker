@@ -1,19 +1,19 @@
 
 <div class="homepage-index">
   <section class="spotlight">
-    <h3>Pizza Spotlight: <%= "#TODO: best pizza method" %></h3>
+    <h3 class="title-text">Pizza Spotlight: <%= "#TODO: best pizza method" %></h3>
     <article class="spotlight"><p><%= "vote count" %> votes - Topped with <%= "toppings" %></p></article>
   </section>
   <hr>
   <section class="top-pizzas">
     <article class="top-crusts">
-      <h4><strong>Top Thin Crust Pizzas</strong></h4>
+      <h4 class="title-text"><strong>Top Thin Crust Pizzas</strong></h4>
       <hr>
       <ul>
       <%# Change this to reflect top ten stuff%>
       <% Pizza.order("id DESC").where(crust: "thin").each do |p| %>
         <li>
-          <h5><%= link_to p.name, pizza_path(p.id) %></h5>
+          <h5><%= link_to p.name, pizza_path(p.id), class: "title-text" %></h5>
           <p><%= p.votes.length %> votes</p>
         </li>
       <% end %>
@@ -21,24 +21,24 @@
 
     </article>
     <article class="top-crusts">
-      <h4><strong>Top Thick Crust Pizzas</strong></h4>
+      <h4 class="title-text"><strong>Top Thick Crust Pizzas</strong></h4>
       <hr>
       <ul>
       <% Pizza.order("id DESC").where(crust: "thick").each do |p| %>
         <li>
-          <h5><%= link_to p.name, pizza_path(p.id) %></h5>
+          <h5><%= link_to p.name, pizza_path(p.id), class: "title-text" %></h5>
           <p><%= p.votes.length %> votes</p>
         </li>
       <% end %>
       </ul>
     </article>
     <article class="top-crusts">
-      <h4><strong>Top Deep Dish Pizzas</strong></h4>
+      <h4 class="title-text"><strong>Top Deep Dish Pizzas</strong></h4>
       <hr>
       <ul>
       <% Pizza.order("id DESC").where(crust: "deep-dish").each do |p| %>
         <li>
-          <h5><%= link_to p.name, pizza_path(p.id) %></h5>
+          <h5><%= link_to p.name, pizza_path(p.id), class: "title-text" %></h5>
           <p><%= p.votes.length %> votes</p>
         </li>
       <% end %>

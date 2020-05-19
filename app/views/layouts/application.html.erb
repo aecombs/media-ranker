@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MediaRanker</title>
+    <title>PizzaRanker</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,24 +11,24 @@
   </head>
 
   <body>
-    <header>
-      <div class="homepage-title">
-        <h1><%= link_to "Pizza Ranker", root_path %></h1>
-        <p><strong>Now <em>you</em> can decide whether pineapple belongs on pizza!</strong></p>
-
-        <nav class="homepage-nav">
-          <ul class="nav homepage-site-nav">
-            <li><%= link_to "View Top Pizzas", root_path %></li>
-            <li><%= link_to "View All Pizzas", pizzas_path %></li>
-            <li><%= link_to "Design a New Pizza", new_pizza_path %></li>
-            <li><%= link_to "View All Users", users_path %></li>
-          </ul>
-          <ul class="nav homepage-user-nav">
-            <li><button class="homepage-nav-button"><%= link_to "Logged In As #{"TODO"}", users_path %></button></li>
-            <li><button class="homepage-nav-button"><%= link_to "Log Out", users_path %></button></li>
-          </ul>
-        </nav>
+    <header class="application-header">
+      <div class="application-title">
+        <h2><%= link_to "Pizza Ranker", root_path %></h2>
+        <div class="vertical-line"></div>
+        <h3>Now <em>you</em> can decide whether pineapple belongs on pizza!</h3>
       </div>
+      <nav class="application-nav">
+        <ul class="nav application-site-nav">
+          <li><%= link_to "View Top Pizzas", root_path %></li>
+          <li><%= link_to "View All Pizzas", pizzas_path %></li>
+          <li><%= link_to "Design a New Pizza", new_pizza_path %></li>
+          <li><%= link_to "View All Users", users_path %></li>
+        </ul>
+        <ul class="nav application-user-nav">
+          <li><button class="button application-nav-button"><%= link_to "Logged In As #{"TODO"}", users_path %></button></li>
+          <li><button class="button application-nav-button"><%= link_to "Log Out", users_path %></button></li>
+        </ul>
+      </nav>
     </header>
     <main>
       <%= yield %>
