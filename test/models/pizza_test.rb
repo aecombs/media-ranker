@@ -15,4 +15,18 @@ describe Pizza do
       expect(pizzas(:invalid_pizza).valid?).must_equal false
     end
   end
+
+  describe "get_top_ten" do
+    it "will get 10 pizzas" do
+
+    end
+
+    it "will get 10 pizzas whose votes are highest" do
+
+    end
+
+    it "will return nil if no pizzas are in a category" do
+
+    end
+  end
 end
