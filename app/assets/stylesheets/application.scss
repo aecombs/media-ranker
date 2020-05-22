@@ -73,7 +73,7 @@ div.application-title h1 a {
 header a {
   color: rgb(26, 140, 130);
 }
-.title-text {
+a.title-text, .title-text {
   color: rgb(38, 166, 154);
   font-weight: bolder;
 }
@@ -132,7 +132,7 @@ footer.footer {
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 main {
-  margin: auto 2rem;
+  margin: auto;
 }
 
 li {
@@ -147,7 +147,20 @@ section.spotlight {
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin: 0 2rem;
   background-color:rgba(255, 255, 255, 0.85);
+}
+
+a.spotlight {
+  padding: 0 10px;
+
+}
+article.spotlight {
+  margin: 0 2rem;
+  padding-bottom: 1rem;
+}
+div.spotlight {
+  margin: 0 1rem;
 }
 
 h2.title-prefix {

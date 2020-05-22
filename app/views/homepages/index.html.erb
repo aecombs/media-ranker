@@ -1,16 +1,19 @@
-
 <div class="homepage-index">
+  <div class="spotlight">
   <section class="spotlight">
-    <h2 class="title-prefix">Pizza Spotlight:</h2><h2 class="title-text"><%= "#TODO: best pizza method" %></h2>
-    <article><p><%= "x" %> votes - Topped with <%= "toppings" %></p></article>
+    <h2 class="title-prefix">Pizza Spotlight: </h2><h2 class="title-text"><%= link_to @spotlight.name, pizza_path(@spotlight.id), class: "title-text spotlight" %></h2>
   </section>
+  <article class="spotlight">
+    <p><%= @spotlight.id %> votes - Topped with <%= "#{@spotlight.sauce}, #{@spotlight.cheese}, #{@spotlight.toppings}" %></p>
+  </article>
   <hr>
+  </div>
+
   <section class="top-pizzas">
     <article class="top-crusts">
       <h2 class="title-text"><strong>Top Thin Crust Pizzas</strong></h2>
       <hr>
       <ul>
-      <%# Change this to reflect top ten stuff%>
       <% Pizza.get_top_ten("thin").each do |p| %>
         <li>
           <h3><%= link_to p.name, pizza_path(p.id), class: "title-text" %></h3>
