@@ -1,7 +1,7 @@
 <div class="homepage-index">
   <div class="spotlight">
   <section class="spotlight">
-    <h2 class="title-prefix">Pizza Spotlight: </h2><h2 class="title-text"><%= link_to @spotlight.name, pizza_path(@spotlight.id), class: "title-text spotlight" %></h2>
+    <h2 class="title-prefix">Pizza Spotlight: </h2><h2 class="title-text"><%= link_to @spotlight.name, pizza_path(@spotlight.id), class: "title-text" %></h2>
   </section>
   <article class="spotlight">
     <p><%= @spotlight.id %> votes - Topped with <%= "#{@spotlight.sauce}, #{@spotlight.cheese}, #{@spotlight.toppings}" %></p>
