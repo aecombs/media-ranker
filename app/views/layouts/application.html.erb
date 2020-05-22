@@ -7,14 +7,13 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gudea:wght@400;700&display=swap" rel="stylesheet">
   </head>
 
   <body>
     <header class="application-header">
       <div class="application-title">
-        <h2><%= link_to "Pizza Ranker", root_path %></h2>
-        <div class="vertical-line"></div>
+        <h1><%= link_to "Pizza Ranker", root_path %></h1>
         <h3>Now <em>you</em> can decide whether pineapple belongs on pizza!</h3>
       </div>
       <nav class="application-nav">
@@ -33,6 +32,6 @@
     <main>
       <%= yield %>
     </main>
-    <footer>© 2020 Alicia Elizabeth Combs</footer>
+    <footer class="footer">© 2020 Alicia Elizabeth Combs</footer>
   </body>
 </html>

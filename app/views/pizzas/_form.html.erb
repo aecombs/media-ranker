@@ -4,27 +4,26 @@
     <li><%= column.capitalize %> <%= message%>.</li>
   <% end %></ul>
 <% end %>
-
-<%= form_with model: @pizza, class: 'pizza-form' do |f| %>
-  <div>
+<%= form_with model: @pizza, class: "form-group" do |f| %>
+  <div class="form-group">
     <%= f.label :crust%>
-    <%= f.select :crust, options_for_select(["thin", "thick", "deep-dish"])  %>
+    <%= f.select(:crust, options_for_select(["thin", "thick", "deep-dish"]), class: "form-control") %>
   </div>
-  <div>
+  <div class="form-group">
     <%= f.label :name%>
-    <%= f.text_field :name%>
+    <%= f.text_field(:name, class: "form-control") %>
   </div>
-  <div>
+  <div class="form-group">
     <%= f.label :sauce %>
-    <%= f.text_field :sauce %>
+    <%= f.text_field(:sauce, class: "form-control") %>
   </div>
-  <div>
+  <div class="form-group">
     <%= f.label :cheese %>
-    <%= f.text_field :cheese %>
+    <%= f.text_field(:cheese, class: "form-control") %>
   </div>
-  <div>
+  <div class="form-group">
     <%= f.label :toppings %>
-    <%= f.text_area :toppings %>
+    <%= f.text_area(:toppings, class: "form-control") %>
   </div>
-  <%= f.submit action_name, class: "button" %>
+  <%= f.submit action_name, class: "button form-group" %>
 <% end %>

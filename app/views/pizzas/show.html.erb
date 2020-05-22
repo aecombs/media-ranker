@@ -1,5 +1,5 @@
 <div class="pizza-show">
-  <h3 class="title-text"><%= @pizza.name %></h3>
+  <h2 class="title-text"><%= @pizza.name %></h2>
   <p><strong>Sauce: </strong><%= @pizza.sauce %></p>
   <p><strong>Cheese: </strong><%= @pizza.cheese %></p>
   <p><strong>Toppings: </strong><%= @pizza.toppings %></p>
@@ -11,7 +11,8 @@
     <button class="button delete pizza-show-button"><%= link_to "Delete", pizza_path(@pizza.id), method: :delete %></button>
   </section>
   <section class="pizza-votes">
-    <h3><%= @pizza.votes.length %> Votes for <%= @pizza.name %></h3>
+  <br>
+    <h4 class="table-title"><%= @pizza.votes.length %> Votes for <%= @pizza.name %></h4>
     <% if @pizza.votes.length > 0 %>
       <table class="table">
         <tr>
@@ -25,7 +26,6 @@
       </table>
     <% else %>
       <p>There are no votes for this pizza yet.</p>
-      <p>Would you like to <%= "vote" %>?</p>
     <% end %>
   </section>
 </div>

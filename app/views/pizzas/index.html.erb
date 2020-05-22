@@ -1,17 +1,17 @@
 <div class="pizza-index">
-  <h3>List of Pizzas</h3>
+  <h2 class="title-text">List of Pizzas</h2>
   <section class="thin-crust-table">
-    <h5>Thin Crust</h5>
-    <%= render partial: "table", locals: { pizzas: @thin_crust }%>
+    <h4 class="table-title">Thin Crust</h4>     
+    <%= render partial: "table", locals: { pizzas: @thin_crust } %>
   </section>
   <hr>
   <section class="thick-crust-table">
-    <h5>Thick Crust</h5>
-    <%= render partial: "table", locals: { pizzas: @thick_crust }%>
+    <h4 class="table-title">Thick Crust</h4>
+    <%= render partial: "table", locals: { pizzas: @thick_crust } %>
   </section>
   <hr>
   <section class="deep-dish-table">
-    <h5>Deep Dish</h5>
-    <%= render partial: "table", locals: { pizzas: @deep_dish }%>
+    <h4 class="table-title">Deep Dish</h4>
+    <%= render partial: "table", locals: { pizzas: @deep_dish } %>
   </section>
 </div>

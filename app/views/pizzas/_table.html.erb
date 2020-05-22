@@ -12,11 +12,11 @@
     <% pizzas.each do |pizza| %>
       <tr>
         <td><%= pizza.votes.length %></td>
-        <td><%= link_to pizza.name, pizza_path(pizza.id) %></td>
+        <td><%= link_to pizza.name, pizza_path(pizza.id), class: "title-text table-text" %></td>
         <td><%= pizza.sauce %></td>
         <td><%= pizza.cheese %></td>
         <td><%= pizza.toppings %></td>
-        <td>Vote!<%=  %></td>
+        <td><button class="button"><%= "Upvote" %></button></td>
       </tr>
     <% end %>
   </table>
