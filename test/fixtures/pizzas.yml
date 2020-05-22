@@ -1,0 +1,8 @@
+pepperoni:
+  crust: deep-dish
+  name: Deep Dish Pepperoni Pizza
+  sauce: Red
+  cheese: Mozzarella
+  toppings: Pepperoni
+invalid_pizza:
+  name: Invalid Pizza

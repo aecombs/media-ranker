@@ -3,4 +3,6 @@ class Pizza < ApplicationRecord
 
   validates :crust, presence: true
   validates :name, presence: true, uniqueness: true
+
+
 end
