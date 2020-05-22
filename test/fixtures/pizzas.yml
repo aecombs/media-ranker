@@ -6,3 +6,62 @@ pepperoni:
   toppings: Pepperoni
 invalid_pizza:
   name: Invalid Pizza
+taco:
+  crust: thin
+  name: Taco Pizza
+  sauce: Beans
+  cheese: Cheddar
+  toppings: Ground Beef, Lettuce, Tomato, Olive, Onion
+bbq:
+  crust: thin
+  name: BBQ Chicken Pizza
+  sauce: Red
+  cheese: Mozzarella
+  toppings: Chicken, BBQ Sauce, Onion
+kale_sausage:
+  crust: thick
+  name: Kale and Sausauge Pizza
+  sauce: Red
+  cheese: Mozzarella
+  toppings: Kale, Sausage, Ricotta
+hawaiian:
+  crust: thick
+  name: Hawaiian Pizza
+  sauce: Red
+  cheese: Mozzarella
+  toppings: Ham, Pineapple
+bacon:
+  crust: thin
+  name: Bacon Pizza
+  sauce: Red
+  cheese: Mozzarella
+  toppings: Bacon, Onion
+cheese:
+  crust: thick
+  name: Cheese Pizza
+  sauce: Red
+  cheese: Mozzarella
+pesto:
+  crust: thin
+  name: Pesto Pepperoni Pizza
+  sauce: Pesto
+  cheese: Mozzarella
+  toppings: Pepperoni
+garlic:
+  crust: thin
+  name: Garlic Chicken Pizza
+  sauce: White
+  cheese: Mozzarella
+  toppings: Chicken, Garlic, Parmesan
+mushroom:
+  crust: deep-dish
+  name: Mushroom Pepperoni Pizza
+  sauce: Red
+  cheese: Mozzarella
+  toppings: Mushroom, Pepperoni
+carbonara:
+  crust: thin
+  name: Carbonara Pizza
+  sauce: White
+  cheese: Mozzarella
+  toppings: Parmesan, Onion, Bacon, Garlic

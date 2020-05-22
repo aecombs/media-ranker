@@ -18,7 +18,7 @@ describe Pizza do
 
   describe "get_top_ten" do
     it "will get 10 pizzas" do
-
+      
     end
 
     it "will get 10 pizzas whose votes are highest" do
