@@ -5,10 +5,10 @@
   <p><strong>Toppings: </strong><%= @pizza.toppings %></p>
 
   <section class="pizza-show__actions">
-    <button class="button pizza-show-button"><%= link_to "Back to Pizza Ranks", root_path %></button>
-    <button class="button pizza-show-button"><%= link_to "Edit", edit_pizza_path(@pizza.id) %></button>
-    <button class="button pizza-show-button"><%= link_to "Upvote(TODO)", pizza_path(@pizza.id) %></button>
-    <button class="button delete pizza-show-button"><%= link_to "Delete", pizza_path(@pizza.id), method: :delete %></button>
+    <button class="button btn btn-primary"><%= link_to "Back to Pizza Ranks", root_path %></button>
+    <button class="button btn btn-primary"><%= link_to "Edit", edit_pizza_path(@pizza.id) %></button>
+    <button class="button btn btn-primary"><%= link_to "Upvote(TODO)", pizza_path(@pizza.id) %></button>
+    <button class="button btn btn-danger"><%= link_to "Delete", pizza_path(@pizza.id), method: :delete %></button>
   </section>
   <section class="pizza-votes">
   <br>

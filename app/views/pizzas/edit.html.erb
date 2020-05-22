@@ -1,3 +1,5 @@
-<h3><emphasis>Current Pizza: <%= @pizza.name%></emphasis></h3>
+<div class="edit-pizza">
+<h2 class="edit-pizza title-text">Currently Editing: <%= @pizza.name%></h2>
 
 <%= render partial: "form", locals: { action_name: "Submit Changes" } %>
+</div>

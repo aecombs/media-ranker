@@ -51,7 +51,6 @@ div.application-title {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-
 }
 
 div.application-title h3 {
@@ -73,7 +72,8 @@ div.application-title h1 a {
 header a {
   color: rgb(26, 140, 130);
 }
-a.title-text, .title-text {
+
+.title-text {
   color: rgb(38, 166, 154);
   font-weight: bolder;
 }
@@ -84,9 +84,10 @@ header a:hover, a.title-text:hover {
 }
 
 nav.application-nav {
+  color: rgb(0, 121, 107);
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   padding-top: 3rem;
   flex-wrap: nowrap;
 }
@@ -103,18 +104,13 @@ button a:hover {
   text-decoration: none;
 }
 
-button.application-nav-button, .button {
+button.btn, button.button {
   color: white;
-  background-color: rgb(35, 164, 153);
+  background-color: rgb(38, 166, 154);
   border: 0 white solid;
-  border-radius: 5px;
-  font-weight: lighter;
-  padding: 0.75rem;
-  transition-delay:0s, 0s, 0s, 0s;
-  transition-duration:0.15s, 0.15s, 0.15s, 0.15s
 }
 
-button .application-nav-button:hover, .button:hover {
+button.btn:hover, button.button:hover {
   color: white;
   background-color: rgb(20, 111, 103);
 }
@@ -198,6 +194,10 @@ p.pizza-toppings {
 // Pizzas#index && #show
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+div.pizza-show, div.edit-pizza, div.new-pizza, div.pizza-index {
+  margin: 0 3rem;
+}
+
 h4.table-title {
   font-weight: bolder;
 }
@@ -206,6 +206,14 @@ a.table-text {
   font-weight: lighter;
 }
 
-button.delete {
+button.btn-danger {
   background-color: rgb(220, 53, 69);
+}
+
+button.btn-danger:hover {
+  background-color: rgb(196, 39, 55);
+}
+
+h2.edit-pizza {
+  padding-bottom: 1rem;
 }
