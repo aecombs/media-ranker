@@ -1,0 +1,22 @@
+<div class="user">
+  <h2 class="title-text">List of Users</h2>
+
+  <% if @users.length > 0 %>
+    <table class="table">
+      <tr>
+        <th>Username</th>
+        <th>Votes</th>
+        <th>Joined</th>
+      </tr>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= link_to user.username, user_path(user.id), class: "title-text table-text" %></td>
+          <td><%= user.votes.length %></td>
+          <td><%= user.created_at %></td>
+        </tr>
+      <% end %>
+    </table>
+  <% else %>
+    <p>Nothing to see here!</p>
+  <% end %>
+</div>

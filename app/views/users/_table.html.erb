@@ -1,0 +1,23 @@
+<% if pizzas.length > 0 %>
+  <table class="table">
+    <tr>
+      <th>Name</th>
+      <th>Sauce</th>
+      <th>Cheese</th>
+      <th>Toppings</th>
+      <th>Voted On</th>
+    </tr>
+    <% while i < pizzas.length %>
+      <tr>
+        <td><%= link_to pizzas[i].name, pizza_path(pizzas[i].id), class: "title-text table-text" %></td>
+        <td><%= pizzas[i].sauce %></td>
+        <td><%= pizzas[i].cheese %></td>
+        <td><%= pizzas[i].toppings %></td>
+        <td><%= votes.pizzas[i].id.created_at %></td>
+      </tr>
+      <% i += 1 %>
+    <% end %>
+  </table>
+<% else %>
+  <p>Nothing to see here!</p>
+<% end %>

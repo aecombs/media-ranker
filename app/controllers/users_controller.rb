@@ -1,12 +1,15 @@
 class UsersController < ApplicationController
   before_action :require_login, only: [:current]
-  before_action :find_user, only: [:show, :login, :new]
+  before_action :find_user, only: [:login, :new]
   before_action :current_user, only: [:logout, :current]
+  # before_action :pizzas_by_vote, only: [:show, :current]
 
   def index
+    @users = User.all
   end
 
   def show
+    @user = User.find_by(id: params[:id])
   end
 
   def login_form
@@ -14,11 +17,11 @@ class UsersController < ApplicationController
   end
 
   def login
-    if @user
+    if User.find_by(id: @user.id)
       session[:user_id] = @user.id
       flash[:success] = "Welcome back, #{@user.username}!"
     else
-      @user = User.create(username: @username)
+      @user = User.create(user_params)
       session[:user_id] = @user.id
       flash[:success] = "Welcome, #{@user.username}!"
     end
@@ -56,11 +59,17 @@ class UsersController < ApplicationController
 
   def user_params
     #TODO: to include votes here for seeding data???
-    return params.require(:users).permit(:username, votes: [])
+    return params.require(:user).permit(:username, votes: [])
   end
 
   def find_user
     @username = params[:user][:username]
     @user = User.find_by(username: @username)
+  end
+
+  def pizzas_by_vote
+    @pizzas = @user.votes.map do |vote|
+      Pizza.find_by(id: vote.pizza_id)
+    end
   end
 end

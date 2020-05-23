@@ -1,0 +1,10 @@
+<div class="user">
+  <h2 class="title-text">User Summary: <%= link_to @user.username, user_path(@user.id), class: "title-text" %></h2>
+    <p>Joined Pizza Ranker on <%= @user.created_at %></p>
+    <h2 class="title-prefix">Votes</h2>
+    <% if @user.votes.length > 0 %>
+      <%= render partial: "table", locals: { pizzas: @pizzas, user: @user } %>
+    <% else %>
+      <p>This user hasn't voted for anything yet.</p>
+    <% end %>
+  </div>
