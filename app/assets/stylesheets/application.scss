@@ -166,6 +166,10 @@ h2.title-prefix {
   text-align:left;
   text-size-adjust:100%;
 }
+h2.title-text a {
+  padding: 10px;
+  text-decoration-line: underline;
+}
 
 section.top-pizzas {
   display: flex;
