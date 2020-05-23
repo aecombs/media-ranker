@@ -20,13 +20,13 @@ class ActiveSupport::TestCase
   def login(username = "Test User")
     user_hash = {
       user: {
-        name: username
+        username: username
       }
     }
 
     post login_path, params: user_hash
 
-    user = User.find_by(name: user_hash[:user][:name])
+    user = User.find_by(username: user_hash[:user][:username])
     return user
   end
   # Add more helper methods to be used by all tests here...
