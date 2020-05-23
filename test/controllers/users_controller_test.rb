@@ -1,7 +1,35 @@
 require "test_helper"
 
 describe UsersController do
-  # it "does a thing" do
-  #   value(1+1).must_equal 2
-  # end
+  describe "session" do
+    it "can get the login form" do
+      get login_path
+
+      must_respond_with :success
+    end
+
+    it "can login a new user" do
+      user = nil
+      #login method located in test_helper.rb
+      expect {
+        user = login()
+      }.must_differ "User.count", 1
+
+      must_respond_with :redirect
+
+      expect(user).wont_be_nil
+      expect(session[:user_id]).must_equal user.id
+      expect(user.name).must_equal user_hash[:user][:name]
+    end
+
+    it "can login an existing user" do
+      user = User.create(name: "Test Is Best")
+
+      expect{
+        login(user.name)
+      }.wont_change "User.count"
+
+      expect(session[:user_id]).must_equal user.id
+    end
+  end
 end
