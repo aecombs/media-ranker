@@ -104,13 +104,13 @@ button a:hover {
   text-decoration: none;
 }
 
-button.btn, button.button {
+button.btn, button.button, .button {
   color: white;
   background-color: rgb(38, 166, 154);
   border: 0 white solid;
 }
 
-button.btn:hover, button.button:hover {
+button.btn:hover, button.button:hover, .button:hover {
   color: white;
   background-color: rgb(20, 111, 103);
 }
@@ -198,7 +198,7 @@ p.pizza-toppings {
 // Pizzas#index && #show
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-div.pizza-show, div.edit-pizza, div.new-pizza, div.pizza-index {
+div.pizza, div.user {
   margin: 0 3rem;
 }
 
