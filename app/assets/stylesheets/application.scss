@@ -198,8 +198,13 @@ p.pizza-toppings {
 // Pizzas#index && #show
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-div.pizza, div.user {
-  margin: 0 3rem;
+div.pizza, div.user, div.flash {
+  margin: 0 3rem 2rem 3rem;
+}
+
+div.flash {
+  font-style: italic;
+  
 }
 
 h4.table-title {
