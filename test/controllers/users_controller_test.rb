@@ -57,7 +57,7 @@ describe UsersController do
       get current_user_path
 
       must_respond_with :redirect
-      expect(flash[:error]).must_equal "You must be logged in to view this page."
+      expect(flash[:error]).must_equal "You must be logged in to do that!"
     end
   end
 end

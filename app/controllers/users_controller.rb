@@ -1,13 +1,12 @@
 class UsersController < ApplicationController
-
- before_action :find_user, only: [:show, :login, :new]
- before_action :find_session_user, only: [:logout, :current]
+  before_action :require_login, only: [:current]
+  before_action :find_user, only: [:show, :login, :new]
+  before_action :current_user, only: [:logout, :current]
 
   def index
   end
 
   def show
-    
   end
 
   def login_form
@@ -63,9 +62,5 @@ class UsersController < ApplicationController
   def find_user
     @username = params[:user][:username]
     @user = User.find_by(username: @username)
-  end
-
-  def find_session_user
-    @user = User.find_by(id: session[:user_id])
   end
 end
