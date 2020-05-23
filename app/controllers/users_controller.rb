@@ -3,25 +3,6 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  # def login
-  #   user = User.find_by(username: params[:user][:username])
-
-  #   if user.nil?
-  #     #create new user
-  #     user = User.new(username: params[:user][:username])
-  #     if !user.save
-  #       flash[:error] = "Unable to login"
-  #       redirect_to root_path
-  #       return
-  #     end
-  #     flash[:success] = "Welcome back, #{user.username}!"
-  #   else
-  #     flash[:success] = "Successfully logged in as #{user.username}."
-  #   end
-  #   session[:user_id] = user.id
-  #   redirect_to root_path
-  # end
-
   def login
     username = params[:user][:username]
     user = User.find_by(username: username)
@@ -39,8 +20,20 @@ class UsersController < ApplicationController
   end
 
   def logout
-    session[:user_id] = nil
-    flash[:success] = "You have successfully logged out."
+    if session[:user_id]
+      user = User.find_by(id: session[:user_id])
+      unless user.nil?
+        session[:user_id] = nil
+        flash[:notice] = "Logout successful -- see you later, #{user.username}!"
+        redirect_to root_path
+        return
+      else
+        session[:user_id] = nil
+        flash[:error] = "There was an error -- Unknown User"
+      end
+    else
+      flash[:error] = "You must be logged in if you want to log out..."
+    end
     redirect_to root_path
     return
   end
