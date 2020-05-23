@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   root to: 'homepages#index'
   
   resources :pizzas
-  resources :users do
+  resources :users, only: [:index, :show, :new] do
     resources :votes, only: [:index, :create]
   end
   resources :votes, only: [:index]
