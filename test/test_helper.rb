@@ -29,5 +29,4 @@ class ActiveSupport::TestCase
     user = User.find_by(username: user_hash[:user][:username])
     return user
   end
-  # Add more helper methods to be used by all tests here...
 end
