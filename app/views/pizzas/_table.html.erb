@@ -1,14 +1,13 @@
-
-<% if pizzas.length > 0 %>
-  <table class="table">
-    <tr>
-      <th>Votes</th>
-      <th>Name</th>
-      <th>Sauce</th>
-      <th>Cheese</th>
-      <th>Toppings</th>
-      <th>Upvote</th>
-    </tr>
+<table class="table">
+  <tr>
+    <th>Votes</th>
+    <th>Name</th>
+    <th>Sauce</th>
+    <th>Cheese</th>
+    <th>Toppings</th>
+    <th>Upvote</th>
+  </tr>
+  <% if !pizzas.nil? && pizzas.length > 0 %>
     <% pizzas.each do |pizza| %>
       <tr>
         <td><%= pizza.votes.length %></td>
@@ -18,8 +17,6 @@
         <td><%= pizza.toppings %></td>
         <td><button class="button btn btn-primary"><%= "Upvote" %></button></td>
       </tr>
-    <% end %>
-  </table>
-<% else %>
-  <p>Nothing to see here!</p>
-<% end %>
+    <% end %> 
+  <% end %>
+</table>

@@ -207,8 +207,9 @@ div.flash {
   
 }
 
-h4.table-title {
+h4.table-title, h3.table-title {
   font-weight: bolder;
+  padding: 5px;
 }
 
 a.table-text {

@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   end
 
   def login
-    if User.find_by(id: @user.id)
+    if @user
       session[:user_id] = @user.id
       flash[:success] = "Welcome back, #{@user.username}!"
     else

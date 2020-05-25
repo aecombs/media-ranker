@@ -12,20 +12,19 @@
   </section>
   <section class="pizza-votes">
   <br>
-    <h4 class="table-title"><%= @pizza.votes.length %> Votes for <%= @pizza.name %></h4>
-    <% if @pizza.votes.length > 0 %>
+    <h3 class="table-title"><%= @pizza.votes.length %> Votes for <%= @pizza.name %></h3>
       <table class="table">
         <tr>
           <th>User</th>
           <th>Date</th>
         </tr>
+        <% if !@pizza.votes.nil? && @pizza.votes.length > 0 %>
         <% @pizza.votes.each do |vote| %>
           <td><%= vote.user %></td>
           <td><%= vote.created_at %></td>
         <% end %>
-      </table>
-    <% else %>
-      <p>There are no votes for this pizza yet.</p>
-    <% end %>
+      <% end %>
+    </table>
+    <hr>
   </section>
 </div>
