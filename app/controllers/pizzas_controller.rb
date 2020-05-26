@@ -1,4 +1,7 @@
 class PizzasController < ApplicationController
+  before_action :require_login, only: [:new, :edit, :destroy]
+  before_action :get_pizza, except: [:index, :new, :create]
+
   def index
     @thin_crust = Pizza.where(crust: "thick").get_top
     @thick_crust = Pizza.where(crust: "thick").get_top
@@ -6,7 +9,6 @@ class PizzasController < ApplicationController
   end
 
   def show
-    @pizza = Pizza.find_by(id: params[:id])
     if @pizza.nil?
       head :not_found
       return
@@ -32,8 +34,6 @@ class PizzasController < ApplicationController
   end
 
   def edit
-    @pizza = Pizza.find_by(id: params[:id])
-
     if @pizza.nil?
       head :not_found
       return
@@ -41,8 +41,6 @@ class PizzasController < ApplicationController
   end
 
   def update
-    @pizza = Pizza.find_by(id: params[:id])
-
     if @pizza.nil?
       head :not_found
       return
@@ -58,8 +56,6 @@ class PizzasController < ApplicationController
   end
 
   def destroy
-    @pizza = Pizza.find_by(id: params[:id])
-    
     if @pizza.nil?
       head :not_found
       return
@@ -80,10 +76,13 @@ class PizzasController < ApplicationController
     end
   end
 
-
   private
 
   def pizza_params
     return params.require(:pizza).permit(:crust, :name, :sauce, :cheese, :toppings)
+  end
+
+  def get_pizza
+    return @pizza = Pizza.find_by(id: params[:id])
   end
 end
