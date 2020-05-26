@@ -21,4 +21,17 @@ describe User do
       expect(users(:invalid_tarik).valid?).must_equal false
     end
   end
+
+  describe "relations" do
+    before do
+      @brock_vote = Vote.create!(user: users(:brock), pizza: pizzas(:pepperoni))
+    end
+
+    it "can have votes" do
+      expect(users(:brock).votes).wont_be_nil
+      expect(users(:brock).votes.first.pizza.name).must_match @brock_vote.pizza.name
+    end
+
+    
+  end
 end
