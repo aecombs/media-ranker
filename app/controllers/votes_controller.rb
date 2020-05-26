@@ -8,12 +8,10 @@ class VotesController < ApplicationController
         if @vote.save
           flash[:success] = "Successfully upvoted!"
           redirect_back fallback_location: pizza_path(@vote.pizza.id)
-          # redirect_to pizza_path(@vote.pizza.id)
           return
         else
           flash[:error] = "Something went wrong..."
           redirect_back fallback_location: pizza_path(@vote.pizza.id)
-          # redirect_to pizza_path(@vote.pizza.id)
           return
         end
       else
