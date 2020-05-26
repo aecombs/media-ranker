@@ -16,10 +16,10 @@
         <td><%= pizza.cheese %></td>
         <td><%= pizza.toppings %></td>
         <% if session[:user_id] %>
-          <td><button class="button btn btn-primary"><%= link_to "Upvote", user_votes_path(session[:user_id]), method: :post %></button></td>
+          <td><%= button_to "Upvote", user_votes_path(session[:user_id]), params: { pizza_id: pizza.id}, class: "button btn btn-primary", method: :post %></td>
         <% else %>
-          <td><button class="button btn btn-primary"><%= link_to "Upvote", pizza_path(pizza.id) %></button></td>
-        <% end %>
+          <td><%= button_to "Login to Upvote", login_path, class: "button btn btn-primary", method: :get %></td>
+      <% end %>
       </tr>
     <% end %> 
   <% end %>
