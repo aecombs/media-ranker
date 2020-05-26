@@ -1,0 +1,11 @@
+<h2 class="title-text"><strong>Top <%= crust_name %> Crust Pizzas</strong></h2>
+<hr>
+<ul>
+  <% Pizza.get_top_ten(crust).each do |p| %>
+    <li>
+      <h3><%= link_to p.name, pizza_path(p.id), class: "title-text" %></h3>
+      <p class="pizza-toppings"><%= p.toppings %></p>
+      <p><%= p.votes.length %> votes</p>
+    </li>
+  <% end %>
+</ul>

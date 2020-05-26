@@ -16,6 +16,6 @@ class Pizza < ApplicationRecord
   end
 
   def self.get_spotlight
-    return self.get_top_ten.sample
+    return self.get_top_ten.first
   end
 end
