@@ -4,8 +4,6 @@ pepperoni:
   sauce: Red
   cheese: Mozzarella
   toppings: Pepperoni
-invalid_pizza:
-  name: Invalid Pizza
 taco:
   crust: thin
   name: Taco Pizza

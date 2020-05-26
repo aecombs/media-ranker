@@ -7,6 +7,7 @@ class Pizza < ApplicationRecord
   def self.get_top(crust = nil)
     if crust
       pizzas = Pizza.where(crust: crust)
+      return nil if pizzas.empty?
     else
       pizzas = Pizza.all
     end
@@ -16,6 +17,8 @@ class Pizza < ApplicationRecord
   end
 
   def self.get_spotlight
-    return self.get_top.first
+    top = self.get_top
+    return nil if top.nil?
+    return top.first
   end
 end

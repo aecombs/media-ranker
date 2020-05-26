@@ -1,0 +1,14 @@
+brock_vote:
+  user_id: 1
+  pizza_id: 3
+angelica_vote:
+  user_id: 2
+  pizza_id: 3
+doris_vote:
+  user_id: 3
+  pizza_id: 2
+joseph_vote:
+  user_id: 4
+  pizza_id: 1
+bad_vote:
+  pizza_id: 1
