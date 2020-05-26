@@ -4,12 +4,10 @@ Rails.application.routes.draw do
   post "/login", to: "users#login"
   post "/logout", to: "users#logout", as: "logout"
   get "/users/current", to: "users#current", as: "current_user"
-
+  
   root to: 'homepages#index'
   
-  resources :pizzas do
-    resources :votes, only: [:index]
-  end
+  resources :pizzas
   resources :users, only: [:index, :show] do
     resources :votes, only: [:index, :create]
   end

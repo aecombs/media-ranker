@@ -33,7 +33,7 @@ class UsersController < ApplicationController
     if session[:user_id]
       unless @user.nil?
         session[:user_id] = nil
-        flash[:notice] = "Logout successful -- see you later, #{@user.username}!"
+        flash[:success] = "Logout successful -- see you later, #{@user.username}!"
         redirect_to root_path
         return
       else
