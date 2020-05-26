@@ -4,7 +4,7 @@ class Pizza < ApplicationRecord
   validates :crust, presence: true
   validates :name, presence: true, uniqueness: true
 
-  def self.get_top_ten(crust = nil)
+  def self.get_top(crust = nil)
     if crust
       pizzas = Pizza.where(crust: crust)
     else
@@ -12,10 +12,10 @@ class Pizza < ApplicationRecord
     end
     
     top_pizzas = pizzas.sort_by { |p| p.votes.length }
-    return top_pizzas.reverse[0..9]
+    return top_pizzas.reverse
   end
 
   def self.get_spotlight
-    return self.get_top_ten.first
+    return self.get_top.first
   end
 end

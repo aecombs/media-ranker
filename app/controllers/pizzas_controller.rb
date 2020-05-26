@@ -1,8 +1,9 @@
 class PizzasController < ApplicationController
   def index
-    @thin_crust = Pizza.where(crust: "thick")
-    @thick_crust = Pizza.where(crust: "thick")
-    @deep_dish = Pizza.where(crust: "deep-dish")
+    @thin_crust = Pizza.where(crust: "thick").get_top
+
+    @thick_crust = Pizza.where(crust: "thick").get_top
+    @deep_dish = Pizza.where(crust: "deep-dish").get_top
   end
 
   def show
