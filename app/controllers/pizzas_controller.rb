@@ -10,7 +10,8 @@ class PizzasController < ApplicationController
 
   def show
     if @pizza.nil?
-      head :not_found
+      flash[:error] = "Unvalid Pizza ID"
+      redirect_to pizzas_path
       return
     end
   end
@@ -35,14 +36,16 @@ class PizzasController < ApplicationController
 
   def edit
     if @pizza.nil?
-      head :not_found
+      flash[:error] = "Unvalid Pizza ID"
+      redirect_to pizzas_path
       return
     end
   end
 
   def update
     if @pizza.nil?
-      head :not_found
+      flash[:error] = "Unvalid Pizza ID"
+      redirect_to pizzas_path
       return
     elsif @pizza.update(pizza_params)
       flash[:success] = "Successfully updated pizza number #{@pizza.id}"
@@ -57,7 +60,8 @@ class PizzasController < ApplicationController
 
   def destroy
     if @pizza.nil?
-      head :not_found
+      flash[:error] = "Unvalid Pizza ID"
+      redirect_to root_path
       return
     else
       name = @pizza.name
