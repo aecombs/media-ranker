@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   
   resources :pizzas
   resources :users, only: [:index, :show] do
-    resources :votes, only: [:index, :create]
+    resources :votes, only: [:create]
   end
 end
