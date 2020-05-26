@@ -1,4 +1,5 @@
 <div class="user">
+  <%= image_tag "https://source.unsplash.com/random/?pizza", size: '200x200', alt: "An avatar representing one of the pizza lovers among us", title: "Pizza is life, Pizza is love" %>
   <h2 class="title-text">User Summary: <%= link_to @user.username, user_path(@user.id), class: "title-text" %></h2>
     <p>Joined Pizza Ranker on <%= @user.created_at %></p>
     <h2 class="title-prefix">Votes</h2>

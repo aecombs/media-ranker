@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   before_action :require_login, only: [:current]
   before_action :find_user, only: [:login, :new]
   before_action :current_user, only: [:logout, :current]
-  # before_action :pizzas_by_vote, only: [:show, :current]
 
   def index
     @users = User.all
@@ -67,11 +66,5 @@ class UsersController < ApplicationController
   def find_user
     @username = params[:user][:username]
     @user = User.find_by(username: @username)
-  end
-
-  def pizzas_by_vote
-    @pizzas = @user.votes.map do |vote|
-      Pizza.find_by(id: vote.pizza_id)
-    end
   end
 end

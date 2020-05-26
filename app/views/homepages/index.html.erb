@@ -4,51 +4,22 @@
     <h2 class="title-prefix">Pizza Spotlight: </h2><h2 class="title-text spotlight"><%= link_to @spotlight.name, pizza_path(@spotlight.id), class: "title-text" %></h2>
   </section>
   <article class="spotlight">
-    <p><%= @spotlight.id %> votes - Topped with <%= "#{@spotlight.sauce}, #{@spotlight.cheese}, #{@spotlight.toppings}" %></p>
+    <p><%= @spotlight.votes.length %> votes - Topped with <%= "#{@spotlight.sauce}, #{@spotlight.cheese}, #{@spotlight.toppings}" %></p>
   </article>
   <hr>
   </div>
 
   <section class="top-pizzas">
     <article class="top-crusts">
-      <h2 class="title-text"><strong>Top Thin Crust Pizzas</strong></h2>
-      <hr>
-      <ul>
-      <% Pizza.get_top_ten("thin").each do |p| %>
-        <li>
-          <h3><%= link_to p.name, pizza_path(p.id), class: "title-text" %></h3>
-          <p class="pizza-toppings"><%= p.toppings %></p>
-          <p><%= p.votes.length %> votes</p>
-        </li>
-      <% end %>
-      </ul>
+      <%= render partial: "top", locals: { crust: "thin", crust_name: "Thin" } %>
+    </article>
 
-    </article>
     <article class="top-crusts">
-      <h2 class="title-text"><strong>Top Thick Crust Pizzas</strong></h2>
-      <hr>
-      <ul>
-      <% Pizza.get_top_ten("thick").each do |p| %>
-        <li>
-          <h3><%= link_to p.name, pizza_path(p.id), class: "title-text" %></h3>
-          <p class="pizza-toppings"><%= p.toppings %></p>
-          <p><%= p.votes.length %> votes</p>
-        </li>
-      <% end %>
-      </ul>
+      <%= render partial: "top", locals: { crust: "thick", crust_name: "Thick" } %>
     </article>
+
     <article class="top-crusts">
-      <h2 class="title-text"><strong>Top Deep Dish Pizzas</strong></h2>
-      <hr>
-      <ul>
-      <% Pizza.get_top_ten("deep-dish").each do |p| %>
-        <li>
-          <h3><%= link_to p.name, pizza_path(p.id), class: "title-text" %></h3>
-          <p class="pizza-toppings"><%= p.toppings %></p>
-          <p><%= p.votes.length %> votes</p>
-        </li>
-      <% end %>
-      </ul>
+      <%= render partial: "top", locals: { crust: "deep-dish", crust_name: "Deep Dish" } %>
     </article>
   </section>
 </div>
