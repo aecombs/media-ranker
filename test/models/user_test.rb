@@ -29,7 +29,7 @@ describe User do
 
     it "can have votes" do
       expect(users(:brock).votes).wont_be_nil
-      expect(users(:brock).votes.first.pizza.name).must_match @brock_vote.pizza.name
+      expect(users(:brock).votes.first.user.username).must_match @brock_vote.user.username
     end
   end
 end

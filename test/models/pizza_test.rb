@@ -27,6 +27,17 @@ describe Pizza do
     end
   end
 
+  describe "relations" do
+    before do
+      @brock_vote = Vote.create!(user: users(:brock), pizza: pizzas(:pepperoni))
+    end
+
+    it "can have votes" do
+      expect(pizzas(:pepperoni).votes).wont_be_nil
+      expect(pizzas(:pepperoni).votes.first.pizza.name).must_match @brock_vote.pizza.name
+    end
+  end
+
   describe "get_top" do
     it "can take a crust as an argument" do
       expect(Pizza.get_top("thin").length).must_equal 6
