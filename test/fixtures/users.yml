@@ -1,9 +1,11 @@
 brock:
   username: brock
 angelica:
-  username: angelica
-tarik:
-  username: tarik
+  username: ang3l1ca
+invalid:
+  username: !nv@l1d
+invalid_tarik:
+  username: t@r!k
 joseph:
   username: joseph
 doris:

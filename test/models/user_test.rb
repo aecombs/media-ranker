@@ -2,31 +2,23 @@ require "test_helper"
 
 describe User do
   describe "validations" do
-    it "is valid when all fields are present" do
-      expect(pizzas(:pepperoni).valid?).must_equal true
-    end
-    it "is valid when only crust and name are present" do
-      pepperoni_test = pizzas(:pepperoni)
-      pepperoni_test.crust = nil  
-
-      expect(pepperoni_test.valid?).must_equal false
-    end
-    it "is invalid when crust is missing" do
-      expect(pizzas(:invalid_pizza).valid?).must_equal false
-    end
-  end
-
-  describe "get_top_ten" do
-    it "will get 10 pizzas" do
-      
+    it "is valid when username is present" do
+      expect(users(:brock).valid?).must_equal true
     end
 
-    it "will get 10 pizzas whose votes are highest" do
-
+    it "is valid when username has letters and numbers" do
+      expect(users(:angelica).valid?).must_equal true
     end
 
-    it "will return nil if no pizzas are in a category" do
+    it "is invalid when username is missing" do
+      user_test = users(:brock)
+      user_test.username = nil
+      expect(user_test.valid?).must_equal false
+    end
 
+    it "is invalid when username has non-letter or non-number chars" do
+      expect(users(:invalid).valid?).must_equal false
+      expect(users(:invalid_tarik).valid?).must_equal false
     end
   end
 end
