@@ -3,7 +3,7 @@ class PizzasController < ApplicationController
   before_action :get_pizza, except: [:index, :new, :create]
 
   def index
-    @thin_crust = Pizza.where(crust: "thick").get_top
+    @thin_crust = Pizza.where(crust: "thin").get_top
     @thick_crust = Pizza.where(crust: "thick").get_top
     @deep_dish = Pizza.where(crust: "deep-dish").get_top
   end
