@@ -7,17 +7,21 @@ class VotesController < ApplicationController
   def create
     if session[:user_id]
       @vote = Vote.new(user: User.find_by(id: params[:user_id]), pizza: Pizza.find_by(id: params[:pizza_id]))
-
-      if @vote.save
-        flash[:success] = "Successfully upvoted!"
-        redirect_back fallback_location: pizza_path(@vote.pizza.id)
-        # redirect_to pizza_path(@vote.pizza.id)
-        return
+      if @vote.is_unique?
+        if @vote.save
+          flash[:success] = "Successfully upvoted!"
+          redirect_back fallback_location: pizza_path(@vote.pizza.id)
+          # redirect_to pizza_path(@vote.pizza.id)
+          return
+        else
+          flash[:error] = "Something went wrong..."
+          redirect_back fallback_location: pizza_path(@vote.pizza.id)
+          # redirect_to pizza_path(@vote.pizza.id)
+          return
+        end
       else
-        flash[:error] = "Something went wrong..."
+        flash[:error] = "You have already voted for this pizza"
         redirect_back fallback_location: pizza_path(@vote.pizza.id)
-        # redirect_to pizza_path(@vote.pizza.id)
-        return
       end
     else
       flash[:error] = "You must be logged in to do that!"
