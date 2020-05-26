@@ -1,12 +1,12 @@
 brock_vote:
-  user_id: 1
-  pizza_id: 3
+  user: users(:brock)
+  pizza: pizzas(:pepperoni)
 angelica_vote:
-  user_id: 2
-  pizza_id: 3
+  user: users(:angelica)
+  pizza: pizzas(:bbq)
 doris_vote:
-  user_id: 3
-  pizza_id: 2
+  user: users(:doris)
+  pizza: pizzas(:bbq)
 joseph_vote:
-  user_id: 4
-  pizza_id: 1
+  user: users(:joseph)
+  pizza: pizzas(:hawaiian)
