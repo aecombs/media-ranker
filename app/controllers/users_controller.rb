@@ -9,6 +9,11 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: params[:id])
+    if @user.nil?
+      flash[:error] = "Unvalid User ID"
+      redirect_to users_path
+      return
+    end
     @votes = @user.votes
     @pizzas = @votes.map { |v| v.pizza }
   end
@@ -48,7 +53,7 @@ class UsersController < ApplicationController
         flash[:error] = "There was an error -- Unknown User"
       end
     else
-      flash[:error] = "You must be logged in if you want to log out..."
+      flash[:error] = "You must be logged in if you want to log out."
     end
     redirect_to root_path
     return
@@ -65,7 +70,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    #TODO: to include votes here for seeding data???
     return params.require(:user).permit(:username, votes: [])
   end
 
