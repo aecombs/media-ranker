@@ -3,4 +3,7 @@
     <p>Joined Pizza Ranker on <%= @user.created_at %></p>
     <h2 class="title-prefix">Votes</h2>
     <%= render partial: "table", locals: { pizzas: @pizzas, user: @user } %>
+    
+    <button class="button btn btn-secondary"><%= link_to "See all Users", users_path %></button>
+    <button class="button btn btn-primary"><%= link_to "Back to Pizza List", pizzas_path %></button>
 </div>

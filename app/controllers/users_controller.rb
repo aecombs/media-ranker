@@ -10,6 +10,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: params[:id])
+    @votes = @user.votes
+    @pizzas = @votes.map { |v| v.pizza }
   end
 
   def login_form

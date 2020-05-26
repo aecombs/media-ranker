@@ -2,6 +2,13 @@ class VotesController < ApplicationController
   before_action :require_login, only: [:create]
 
   def index
+    if params[:user_id]
+      @votes = Vote.where(user_id: params[:user_id])
+    elsif params[:pizza_id]
+      @votes = Vote.where(pizza_id: params[:pizza_id])
+    else
+      @votes = Vote.all
+    end
   end
 
   def create

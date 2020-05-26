@@ -28,7 +28,7 @@
         <% if !@pizza.votes.nil? && @pizza.votes.length > 0 %>
         <% @pizza.votes.each do |vote| %>
           <tr>
-            <td><%= vote.user.username %></td>
+            <td><%= link_to vote.user.username, user_path(vote.user_id), class: "title-text table-text" %></td>
             <td><%= vote.created_at %></td>
           </tr>
         <% end %>
