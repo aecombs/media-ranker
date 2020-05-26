@@ -1,4 +1,9 @@
 <div class="user">
+ <% if @user.errors.any? %>
+  <ul><% @user.errors.each do |column, message| %>
+    <li><%= column.capitalize %> <%= message%>.</li>
+  <% end %></ul>
+<% end %>
   <%= form_with model: @user, url: login_path do |f| %>
     <div class="form-group">
       <%= f.label :username %>

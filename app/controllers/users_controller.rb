@@ -22,9 +22,15 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       flash[:success] = "Welcome back, #{@user.username}!"
     else
-      @user = User.create(user_params)
-      session[:user_id] = @user.id
-      flash[:success] = "Welcome, #{@user.username}!"
+      @user = User.new(user_params)
+      if @user.save
+        session[:user_id] = @user.id
+        flash[:success] = "Welcome, #{@user.username}!"
+      else
+        flash.now[:error] = "Unable to log user in"
+        render :login_form
+        return
+      end
     end
     redirect_to root_path
     return
