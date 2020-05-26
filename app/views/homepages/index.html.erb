@@ -4,7 +4,7 @@
     <h2 class="title-prefix">Pizza Spotlight: </h2><h2 class="title-text spotlight"><%= link_to @spotlight.name, pizza_path(@spotlight.id), class: "title-text" %></h2>
   </section>
   <article class="spotlight">
-    <p><%= @spotlight.id %> votes - Topped with <%= "#{@spotlight.sauce}, #{@spotlight.cheese}, #{@spotlight.toppings}" %></p>
+    <p><%= @spotlight.votes.length %> votes - Topped with <%= "#{@spotlight.sauce}, #{@spotlight.cheese}, #{@spotlight.toppings}" %></p>
   </article>
   <hr>
   </div>
